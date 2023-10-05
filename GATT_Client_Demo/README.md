@@ -44,7 +44,7 @@ Each service distinguishes itself from other services by means of a unique numer
 ## HW and SW configuration
 First step here to configure UART pin:
 
-![UART configuration](media/da14531.png)
+[UART configuration](media/da14531.svg)
 
 
 
@@ -67,7 +67,7 @@ For the initial setup of the project that involves linking the SDK to this SW ex
 
 2. Expand the dialog shown in the red box in the image below.
 
-![Expand_Select_Device](assets/Expand_Select_Device.png)
+![Expand_Select_Device](media/Expand_Select_Device.png)
 
   Select your device: DA14531
 		
@@ -77,7 +77,7 @@ You can download SmartBond from following link:
 [SmartBond](https://play.google.com/store/apps/details?id=com.renesas.smartbond&hl=it&gl=US)
 
 1. on the top left corner open the option file and choose server.
-   ![server](assets/1step.jpg)
+   ![server](media/1step.jpg)
 
 2. You will see the add option on right top corner. press it.
 
@@ -90,19 +90,19 @@ You can download SmartBond from following link:
 5. Now choose the service and add a characteristic, we named it data ,also give an UUId to it.For example:
     UUID: 43484152-2dab-3241-6972-6f6861424c45
 6. Let's give it a read properties for the beginning. Just like the following figure choose the options.
-   ![read](assets/2step.jpg)
+   ![read](media/2step.jpg)
 
 7. make sure you activate the service by pushing the button.
    6. Let's give it a read properties for the beginning. Just like the following figure choose the options.
-   ![read](assets/active.jpg)   
+   ![read](media/active.jpg)   
 
 ## Expected Results
 
 Build and run the example on keil.On smartBond scan for GAP_Periph_GATT_Client and connect to it.
-    ![GAP_Periph_GATT_Client](assets/connect.jpg)
+    ![GAP_Periph_GATT_Client](media/connect.jpg)
 
 Mean while open TeraTerm and configure Baudrate to 115200. You will see the application will scan all the UUIDs and match with the user UUID which we already defined it in client and in server. 
-    ![Teraterm_read](assets/tera_read.jpg)
+    ![Teraterm_read](media/tera_read.jpg)
 
 Here you will see after matching to the service UUID, every 10 seconds client will send a read request to server and server will send the response.
 ```c
@@ -119,24 +119,24 @@ To handle the different flags comming from server refer to `user_catch_rest_hndl
 
 Here we can test this example also with write properties. In this case , we define a counter which increase by every time pushing switch 3 on development board. To see this , change the service properties on SmartBond to W and write permission like below:
 
-![write](assets/write.jpg)
+![write](media/write.jpg)
 
 Build and run the application. On tera term you will see this message now. By every time pushing SW3 you will see also and increament on the value in the server.
-![write teraterm](assets/write_teraterm.jpg)
+![write teraterm](media/write_teraterm.jpg)
 
 
 Now for last part, Lets see how to subscribe and receive notification from server:
 
 first activate the notification on the server.
-![notification](assets/notification.jpg)
+![notification](media/notification.jpg)
 
 To subscribe for the notification to the server we need to send ccc_value which is a typically a 16-bit descriptor to server. For notification we need to send 0x0001 and for indication 0x0002. Again in `user_catch_rest_hndl` you can see the flag for receive and handle notification after getting paired with device. 
 On teraterm You can expect to receive this messages:
 
-![notification_tera](assets/notification_tera1.jpg)
+![notification_tera](media/notification_tera1.jpg)
 
 To send the notification by server on your mobile phone after connection go to server section and press on Unknown service you will see the It is showing the notifications enabled.
 If it doesnt , press the button shape icon and activate the notification and now by every time pushing the Bell icon and pushing send you will receive a notification on your terminal.
- ![notification_tera](assets/notif_activate.jpg)
+ ![notification_tera](media/notif_activate.jpg)
 
- ![notif_tera_received](assets/notif_tera_received.jpg)
+ ![notif_tera_received](media/notif_tera_received.jpg)
