@@ -93,10 +93,10 @@ You can download SmartBond from following link:
     UUID: 43484152-2dab-3241-6972-6f6861424c45
 
 6. Let's give it a read properties for the beginning. Just like the following figure choose the options.
-7. 
+   
    ![read](media/2step.jpg)
 
-8. make sure you activate the service by pushing the button.
+7. make sure you activate the service by pushing the button.
 
    ![read](media/active.jpg)   
 
@@ -131,7 +131,7 @@ Here we can test this example also with write properties. In this case , we defi
 
 Build and run the application. On tera term you will see this message now. By every time pushing SW3 you will see also and increament on the value in the server.
 
-![write teraterm](media/write_teraterm.jpg)
+![write_teraterm](media/Write_teraterm.jpg)
 
 
 Now for last part, Lets see how to subscribe and receive notification from server:
