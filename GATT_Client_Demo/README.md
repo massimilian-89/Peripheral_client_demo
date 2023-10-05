@@ -44,7 +44,7 @@ Each service distinguishes itself from other services by means of a unique numer
 ## HW and SW configuration
 First step here to configure UART pin:
 
-[UART configuration](media/da14531.svg)
+![UART configuration](media/da14531.svg)
 
 
 
